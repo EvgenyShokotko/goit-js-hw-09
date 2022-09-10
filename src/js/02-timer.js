@@ -21,10 +21,9 @@ decorDiv.forEach((div) => {
   div.style.flexDirection = 'column';
   div.style.justifyContent = 'center';
   div.style.alignItems = 'center';
-  div.style.paddingLeft = '5px';
-  // div.style.paddingLeft.firstChild = '0px';
+  div.style.paddingLeft = '20px';
 })
-
+decorDiv[0].style.paddingLeft = '0px'
 decorSpan.forEach ((span) => { 
   span.style.fontSize = '25px';
     });
