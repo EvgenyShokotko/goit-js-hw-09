@@ -30,9 +30,6 @@ decorSpan.forEach ((span) => {
     });
 decorTimer.style.display = 'flex';
 
-
-
-
 btn.disabled = true;
 let selectedtime = null;
 let ms = null;
@@ -79,11 +76,11 @@ function convertMs(ms) {
   spanMinutes.textContent = minutes;
   spanSeconds.textContent = seconds;
 
-  // if (days == 00 && hours == 00 && minutes == 00 && seconds == 00) {
-  //   Notiflix.Notify.success('Congratulations we did it. Choose another date and try again....');
-  //   clearInterval(timerId);
-  //   btn.disabled = false
-  // }
+  if (days == 00 && hours == 00 && minutes == 00 && seconds == 00) {
+    Notiflix.Notify.success('Congratulations we did it. Choose another date and try again....');
+    clearInterval(timerId);
+    btn.disabled = false
+  }
     return { days, hours, minutes, seconds };   
 }
 
