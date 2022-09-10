@@ -75,8 +75,7 @@ function convertMs(ms) {
   spanHours.textContent = hours;
   spanMinutes.textContent = minutes;
   spanSeconds.textContent = seconds;
-
-  if (days == 00 && hours == 00 && minutes == 00 && seconds == 00) {
+  if (days <= 0 && hours <= 0 && minutes <= 0 && seconds <= 0) {
     Notiflix.Notify.success('Congratulations we did it. Choose another date and try again....');
     clearInterval(timerId);
     btn.disabled = false
@@ -88,9 +87,8 @@ function onBtnStart() {
     btn.disabled = true;
     Notiflix.Notify.success('Well done, lets start....');
     timerId = setInterval(() => {
-            const deltaTime = selectedtime - Date.now();
-            const { days, hours, minutes, seconds } = convertMs(deltaTime);
-            
+      const deltaTime = selectedtime - Date.now();
+      const { days, hours, minutes, seconds } = convertMs(deltaTime);
     }, 1000);
 
     }
